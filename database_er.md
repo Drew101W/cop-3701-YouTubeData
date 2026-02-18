@@ -13,3 +13,4 @@ between videos, tags, regions, and channels.
 ## ER Diagram
 
 ![YouTube ER Diagram](ERD_Youtube_Data.png)
+Link for Diagram ^
