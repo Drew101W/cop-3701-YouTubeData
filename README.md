@@ -35,3 +35,19 @@ The project will:
 - Use SQL window functions to calculate growth rates
 - Create indexes to support fast queries and text search
 
+Database Design Overview (Part B Update)
+
+This database is designed using an Entity-Relationship model that includes:
+Strong entities: Video, Channel, Category, Region, Tag
+A weak entity: TrendingSnapshot (dependent on Video and Region)
+An associative entity: VideoTag (resolves many-to-many between Video and Tag)
+The TrendingSnapshot entity models time-series data and uses a composite primary key (VideoID, RegionCode, TrendingDate).
+
+The design includes:
+One-to-many relationships (Channel to Video)
+Many-to-many relationships (Video to Tag)
+One-to-one relationship (Video to VideoStatisticsSummary)
+
+Unique or Difficult Aspects
+
+The most complex aspect of the design is modeling daily trending records as a weak entity. Each trending record depends on both a Video and a Region, requiring a composite primary key and identifying relationships. Additionally, modeling tags required creating an associative entity to correctly resolve a many-to-many relationship.
