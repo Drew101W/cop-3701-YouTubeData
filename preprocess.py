@@ -127,3 +127,26 @@ videotags.to_csv("data/videotags.csv", index=False)
 
 
 print("All CSV files generated successfully!")
+
+
+
+# Path to your data (either ZIP or extracted CSV)
+data_path = "dataset/USvideos.zip"
+
+# Check if the file is a ZIP
+if data_path.endswith(".zip"):
+    with zipfile.ZipFile(data_path) as z:
+        # List all files inside the ZIP
+        files = z.namelist()
+        # Find the first CSV file
+        csv_file = next((f for f in files if f.endswith(".csv")), None)
+        if csv_file is None:
+            raise FileNotFoundError("No CSV file found inside the ZIP.")
+        # Read CSV directly from ZIP
+        with z.open(csv_file) as f:
+            df = pd.read_csv(f)
+else:
+    # If it's already a CSV
+    df = pd.read_csv(data_path)
+
+print(df.head())
