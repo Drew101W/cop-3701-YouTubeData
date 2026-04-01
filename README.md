@@ -1,5 +1,7 @@
 # cop-3701-YouTubeData
 # YouTube Trending Content Analytics Database
+## Final ER Design
+[View the final ER design and normalized schema](database_er.md)
 
 ## Application Domain
 This project is in the **data analytics and database systems** domain. It focuses on storing and analyzing YouTube’s daily trending videos to understand engagement and popularity trends over time.
