@@ -25,7 +25,7 @@ This project uses the **YouTube Trending Videos Dataset**, collected using the Y
 
 Dataset details:
 - Daily records of trending videos
-- Covers multiple regions (US, GB, DE, CA, FR, and others)
+- Covers the US region
 - Up to 200 trending videos per region per day
 - Includes video title, channel name, publish date, tags, description, views, likes, dislikes, and comment count
 - Category information provided through JSON files
