@@ -4,16 +4,16 @@ from tabulate import tabulate
 
 def connect_db():
     try:
+        # Use 'unix_socket' instead of 'host' and 'port'
         conn = mariadb.connect(
-            user="your_username",
-            password="your_password",
-            host="127.0.0.1",
-            port=3306,
-            database="your_database_name"
+            user="youtube",
+            password="ytaccess",
+            unix_socket="/run/mysqld/mysqld.sock", # Common path, verify yours
+            database="YouTube"
         )
         return conn
     except mariadb.Error as e:
-        print(f"Error connecting to MariaDB Platform: {e}")
+        print(f"Error connecting to MariaDB via Unix Socket: {e}")
         sys.exit(1)
 
 def run_query(query, params=None):
@@ -79,10 +79,12 @@ def menu():
             run_query(query)
 
         elif choice == '4':
-            name = input("Enter exact channel name: ")
+            name = input("Enter channel name (partial or full): ")
             query = """
             SELECT 
-                c.ChannelName, c.Country, c.SubscriberCount,
+                c.ChannelName,
+                c.Country,
+                c.SubscriberCount,
                 COUNT(DISTINCT v.VideoID) AS TotalUniqueTrendingVideos,
                 SUM(ts.Views) AS TotalCumulativeViews,
                 SUM(ts.Likes) AS TotalCumulativeLikes,
@@ -92,10 +94,11 @@ def menu():
             FROM Channel c
             LEFT JOIN Video v ON c.ChannelID = v.ChannelID
             LEFT JOIN TrendingSnapshot ts ON v.VideoID = ts.VideoID
-            WHERE c.ChannelName = ?
-            GROUP BY c.ChannelID;
+            WHERE c.ChannelName LIKE ?
+            GROUP BY c.ChannelID, c.ChannelName, c.Country, c.SubscriberCount;
             """
-            run_query(query, (name,))
+            # Using %name% allows for case-insensitive partial matches
+            run_query(query, (f"%{name}%",))
 
         elif choice == '5':
             tag = input("Enter exact tag name: ")

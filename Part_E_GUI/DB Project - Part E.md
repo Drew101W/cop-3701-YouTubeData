@@ -17,6 +17,10 @@ SELECT Title, ChannelName FROM Video v JOIN Channel c ON c.ChannelID=v.ChannelID
 
 Where clause varies based on provided search items.
 
+### Image
+
+![260417_10h33m12s_screenshot](/home/eli/Pictures/Screenshots/260417_10h33m12s_screenshot.png)
+
 ## Requirement 2
 
 ### Description
@@ -30,6 +34,10 @@ SELECT Title FROM Video v JOIN Channel c ON c.ChannelID=v.ChannelID WHERE Channe
 ```
 
 Allows for partial or full match.
+
+### Image
+
+![260417_10h34m47s_screenshot](/home/eli/Pictures/Screenshots/260417_10h34m47s_screenshot.png)
 
 ## Requirement 3
 
@@ -54,6 +62,10 @@ JOIN Category c ON v.CategoryID = c.CategoryID
 GROUP BY c.CategoryName
 ORDER BY Percentage DESC;
 ```
+
+### Image
+
+![260417_10h35m18s_screenshot](/home/eli/Pictures/Screenshots/260417_10h35m18s_screenshot.png)
 
 ## Requirement 4
 
@@ -81,6 +93,10 @@ WHERE c.ChannelName = '<channel name>'
 GROUP BY c.ChannelID;
 ```
 
+### Image
+
+![260417_10h39m19s_screenshot](/home/eli/Pictures/Screenshots/260417_10h39m19s_screenshot.png)
+
 ## Requirement 5
 
 ### Description
@@ -106,3 +122,6 @@ WHERE t.TagName = '<tag name>'
 GROUP BY t.TagID, t.TagName;
 ```
 
+### Image
+
+![260417_10h36m04s_screenshot](/home/eli/Pictures/Screenshots/260417_10h36m04s_screenshot.png)
