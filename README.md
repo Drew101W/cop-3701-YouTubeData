@@ -62,3 +62,5 @@ Step 1: Run create_db.sql to create database
 Step 2: Load data using dataload.py  
 Step 3: Update database credentials in app.py  
 Step 4: Run the app:
+## Home Page Interface
+<img width="443" height="181" alt="image" src="https://github.com/user-attachments/assets/dffe4751-c26c-466b-bf63-4482aa7f26f1" />
