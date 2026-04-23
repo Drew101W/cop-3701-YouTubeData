@@ -53,3 +53,12 @@ One-to-one relationship (Video to VideoStatisticsSummary)
 Unique or Difficult Aspects
 
 The most complex aspect of the design is modeling daily trending records as a weak entity. Each trending record depends on both a Video and a Region, requiring a composite primary key and identifying relationships. Additionally, modeling tags required creating an associative entity to correctly resolve a many-to-many relationship.
+
+
+
+## How to Use This Repo
+
+Step 1: Run create_db.sql to create database  
+Step 2: Load data using dataload.py  
+Step 3: Update database credentials in app.py  
+Step 4: Run the app:
