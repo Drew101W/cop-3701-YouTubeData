@@ -66,7 +66,8 @@ Step 2: Enter PostgreSQL as admin
 - su - postgres
 - psql
   
-Step 3: Load data using \i /workspaces/cop-3701-YouTubeData/dataload.sql 
+Step 3: Load data using:
+- \i /workspaces/cop-3701-YouTubeData/dataload.sql 
 
 Step 4: Set database password with:
 - ALTER USER postgres WITH PASSWORD 'postgrespass';
