@@ -72,12 +72,12 @@ Step 3: Load data using:
 Step 4: Set database password with:
 - ALTER USER postgres WITH PASSWORD 'postgrespass';
 
-Step 6: Exit PostgreSQL back to terminal
+Step 5: Exit PostgreSQL back to terminal
 -\q
 -exit
 -exit
 
-Step 7: Run the application
+Step 6: Run the application
 - python Part_E_GUI/gui.py
   
 ## Home Page Interface
