@@ -57,19 +57,27 @@ The most complex aspect of the design is modeling daily trending records as a we
 
 
 ## How to Use This Repo
-Step 1: Run these codes to get correct installs\files
+Step 1: Install dependencies and start PostgreSQL
 - pip install psycopg2-binary tabulate
 - sudo service postgresql start
--  sudo su -
--  su - postgres
--  psql
 
-Step 2: Run \i /workspaces/cop-3701-YouTubeData/create_db.sql to create database  
-
+Step 2: Enter PostgreSQL as admin
+- sudo su -
+- su - postgres
+- psql
+  
 Step 3: Load data using \i /workspaces/cop-3701-YouTubeData/dataload.sql 
 
-Step 4: Update database credentials with ALTER USER postgres WITH PASSWORD 'postgrespass';
+Step 4: Set database password with:
+- ALTER USER postgres WITH PASSWORD 'postgrespass';
 
-Step 5: Exit back into correct spot then run the app:
+Step 6: Exit PostgreSQL back to terminal
+-\q
+-exit
+-exit
+
+Step 7: Run the application
+- python Part_E_GUI/gui.py
+  
 ## Home Page Interface
 <img width="443" height="181" alt="image" src="https://github.com/user-attachments/assets/dffe4751-c26c-466b-bf63-4482aa7f26f1" />
