@@ -63,6 +63,7 @@ Step 1: Run these codes to get correct installs\files
 -  sudo su -
 -  su - postgres
 -  psql
+
 Step 2: Run \i /workspaces/cop-3701-YouTubeData/create_db.sql to create database  
 Step 3: Load data using \i /workspaces/cop-3701-YouTubeData/dataload.sql 
 Step 4: Update database credentials with ALTER USER postgres WITH PASSWORD 'postgrespass';
